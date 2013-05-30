@@ -1,17 +1,18 @@
 -module(erlv8_fun_invocation,[ICC,Holder,This,Ref,VM, Ctx]).
+-compile({parse_transform, pmod_pt}).
 -export([is_construct_call/0, holder/0, this/0, global/0, vm/0]).
 
 is_construct_call() ->
-	ICC.
+  ICC.
 
 holder() ->
-	Holder.
+  Holder.
 
 this() ->
-	This.
+  This.
 
 global() ->
-	erlv8_context:global({VM,Ctx}).
+  erlv8_context:global({VM,Ctx}).
 
 vm() ->
-	VM.
+  VM.
